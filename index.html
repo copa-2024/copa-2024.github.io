@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description"
+        content="CoPa: General Robotic Manipulation through Spatial Constraints of Parts with Fundational Models">
+  <meta name="keywords" content="Robotic Manipulation, GPT-4V(ision)">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title style="letter-spacing: 0.1em; font-variant: small-caps;">CoPa</title>
+
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-FV4ZJ9PVSV"></script>  
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-FV4ZJ9PVSV');
+  </script>
+
+  <script>
+    function updateInteractive() {
+      var task = document.getElementById("interative-menu").value;
+
+      console.log("interactive", task)
+
+      var video = document.getElementById("interactive-video");
+      video.src = "media/short-videos/" + 
+                  task + 
+                  ".mp4"
+      video.play();
+
+      var html = document.getElementById("interactive-html-1");
+      html.src = "media/interactive/" + 
+                  task + 
+                  ".html"
+
+      // hide the second iframe container
+      var iframeContainer2 = document.getElementById("second-iframe-container");
+      iframeContainer2.style.display = "none";
+    }
+
+
+  </script>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+</head>
+<body onload="updateInteractive();">
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-fullhd">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-1 publication-title">CoPa: General Robotic Manipulation through <br> Spatial Constraints of Parts with Fundational Model</h1>
+
+          <div class="is-size-5 publication-authors">
+            Anonymous Authors
+          </div>
+
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              <!-- PDF Link. -->
+              <span class="link-block">
+                <a target="_blank" href="copa.pdf"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                  </span>
+                  <span>Paper</span>
+                </a>
+              </span>
+
+            <!-- Arxiv Link. -->
+            <span class="link-block">
+              <a target="_blank" href="https://example.com"
+                 class="external-link button is-normal is-rounded is-dark">
+                <span class="icon">
+                    <i class="fas fa-file"></i>
+                </span>
+                <span>ArXiv</span>
+              </a>
+            </span>
+
+            <!-- Video Link. -->
+            <span class="link-block">
+              <a target="_blank" href="https://example.com"
+                 class="external-link button is-normal is-rounded is-dark">
+                <span class="icon">
+                    <i class="fab fa-youtube"></i>
+                </span>
+                <span>Video</span>
+              </a>
+            </span>
+
+            <!-- Code Link. -->
+            <span class="link-block">
+              <a target="_blank" href="https://example.com"
+                 class="external-link button is-normal is-rounded is-dark">
+                <span class="icon">
+                    <i class="fab fa-github"></i>
+                </span>
+                <span>Code (Coming Soon)</span>
+                </a>
+            </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="hero teaser">
+  <div class="container is-fullhd">
+    <div class="hero-body">
+      <div class="container">
+        <div class="columns is-vcentered  is-centered">
+          <video id="teaser" autoplay muted loop controls height="100%" width="100%" controlsList="nodownload">
+            <source src="media/videos/teaser_video.mp4"
+                    type="video/mp4">
+          </video>
+          </br>
+        </div>
+        <br>
+        <h2 class="subtitle has-text-centered">
+        We propose Robotic Manipulation through Spatial
+        Constraints of Parts <b>(COPA)</b>, a novel framework that incorporates common sense knowledge embedded within 
+        foundation vision-language models (VLMs), such as GPT-4V, into the low-level robotic manipulation tasks.
+        </h2>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Tasks gallery -->
+<section class="hero is-light is-small">
+  <div class="hero-body">
+    <div class="container">
+      <div id="results-carousel" class="carousel results-carousel">
+        
+        <div class="item">
+          <video poster="" autoplay muted loop height="100%" controlsList="nodownload">
+            <source src="media/task-videos/button-mark-4x_crf20.0.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item">
+          <video poster="" autoplay muted loop height="100%" controlsList="nodownload">
+            <source src="media/task-videos/drawer-mark-4x_crf20.0.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item">
+           <video poster="" autoplay muted loop height="100%" controlsList="nodownload">
+             <source src="media/task-videos/hammer-mark-4x_crf20.0.mp4"
+                     type="video/mp4">
+           </video>
+         </div>
+        <div class="item">
+          <video poster="" autoplay muted loop height="100%" controlsList="nodownload">
+            <source src="media/task-videos/flowers-mark-4x_crf20.0.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item">
+          <video poster="" autoplay muted loop height="100%" controlsList="nodownload">
+            <source src="media/task-videos/glasses-mark-4x_crf20.0.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item">
+          <video poster="" autoplay muted loop height="100%" controlsList="nodownload">
+            <source src="media/task-videos/eraser-mark-4x_crf20.0.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item">
+          <video poster="" autoplay muted loop height="100%" controlsList="nodownload">
+            <source src="media/task-videos/scissors-mark-2x_crf20.0.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item">
+          <video poster="" autoplay muted loop height="100%" controlsList="nodownload">
+            <source src="media/task-videos/spoon-mark-4x_crf20.0.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+       <div class="item">
+          <video poster="" autoplay muted loop height="100%" controlsList="nodownload">
+            <source src="media/task-videos/sweep-mark-4x_crf20.0.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<h2 class="subtitle has-text-centered">
+</br>
+  Copa is capable of handling diverse <b>open-set instructions and objects</b> in a <b>zero-training</b> manner.
+</h2>
+
+<!-- Abstract -->
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Abstract. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3" style="margin-bottom: 1em;">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            Foundation models pre-trained on web-scale data are shown to encapsulate extensive world knowledge beneficial for robotic manipulation in the form of task planning. 
+            However, the actual physical implementation of these plans often relies on task-specific learning methods, which require significant data collection and struggle with generalizability.
+            In this work, we introduce Robotic Manipulation through
+            Spatial <u>Co</u>nstraints of <u>Pa</u>rts <b>(CoPa)</b>, a novel framework that leverages the common sense knowledge embedded within foundation models to generate a sequence of 6-DoF end-effector poses for open-world robotic manipulation.
+            Specifically, we decompose the manipulation process into two phases: task-oriented grasping and task-aware motion planning. 
+            In the task-oriented grasping phase, we employ foundation vision-language models (VLMs) to select the object’s grasping part through a novel coarse-to-fine grounding mechanism.
+            During the task-aware motion planning phase, VLMs are utilized again to identify the spatial geometry constraints of task-relevant object parts, which are then used to derive post-grasp poses.
+            We also demonstrate how CoPa can be seamlessly integrated with existing robotic planning algorithms to accomplish complex, long-horizon tasks.
+            Our comprehensive real-world experiments show that CoPa possesses a fine-grained physical understanding of scenes, capable of handling open-set instructions and objects with minimal prompt engineering and without additional training.
+          </p>
+        </div>
+      </div>
+    </div>
+    <!--/ Abstract. -->
+
+  </div>
+
+</section>
+
+<!-- Method + common sense -->
+<section class="section">
+  <div class="container is-max-widescreen">
+
+    <div class="rows">
+
+
+    <!-- Animation. -->
+    <div class="rows is-centered ">
+      <div class="row is-full-width">
+        <div class="container has-text-centered">
+          <h2 class="title is-3" style="margin-bottom: 1em;"><span class="dperact" style="letter-spacing: 0.1em;">CoPa</span></h2>
+          <!-- <h2 class="title is-3" style="margin-bottom: 1em;"><span class="dperact" style="letter-spacing: 0.1em;">CoPa</span></h2> -->
+        </div>
+
+        <!-- Interpolating. -->
+        <div class="content has-text-justified">
+        <!-- <br> -->
+        </div>
+        <!-- <img src="media/videos/method_figure.gif" class="interpolation-image" /> -->
+        <img src="media/figure/teaser.png" class="interpolation-image" />
+        <!-- <video src="media/videos/method.mp4" class="interpolation-image" loop autoplay muted controlsList="nodownload"></video> -->
+        <p class="content has-text-justified">
+          <b>Left</b> Our pipeline. Given an instruction and scene observation, COPA first generates a grasp
+          pose through <span style="color: orange;">Task-Oriented Grasping Module</span> . Subsequently, a <span style="color: deepskyblue;">Task-Aware Motion Planning Module</span> 
+            is utilized to obtain post-grasp poses. <b>Right</b>. Examples of real-world experiments. Boasting a fine-grained
+          physical understanding of scenes, COPA can generalize to open-world scenarios, handling open-set instructions and objects
+          with minimal prompt engineering and without the need for additional training.
+        </p>
+        
+        <div class="container has-text-centered">
+          <h3 class="title is-4" style="margin-bottom: 1em;"><span class="dperact" style="letter-spacing: 0.1em; color: limegreen;">Grounding Module</span></h2>
+        </div>
+        <img src="media/figure/grounding.png" class="interpolation-image" />
+        <p class="content has-text-justified">
+          his module is utilized to identify the <span style="color: orange;">grasping part for task-oriented grasping</span> or <span style="color: deepskyblue;"> task-relevant
+          parts for task-aware motion planning</span>. The grounding process is divided into two stages: coarse-grained object grounding
+          and fine-grained part grounding. Specifically, we first segment and label objects within the scene using SoM. Then, in
+          conjunction with the instruction, we employ GPT-4V to select the <span style="color: orange;">grasping</span>/<span style="color: deepskyblue;">task-relevant</span> objects. Finally, similar fine-grained
+          part grounding is applied to locate the specific <span style="color: orange;">grasping</span>/<span style="color: deepskyblue;">task-relevant</span> parts.
+        </p>
+
+        <div class="container has-text-centered">
+          <h3 class="title is-4" style="margin-bottom: 1em;"><span class="dperact" style="letter-spacing: 0.1em; color: orange;">Task-Oriented Grasping Module</span></h2>
+        </div>
+        <div class="container">
+          <div class="columns is-centered">
+            <div class="column is-half">
+              <figure class="image half-width-image">
+                <img src="media/figure/grasping.png" class="interpolation-image" />
+              </figure>
+            </div>
+          </div>
+        </div>
+        <p class="content has-text-justified">
+          This module is employed to generate grasp poses. Initially, grasp pose candidates are generated from the scene point cloud using
+          GraspNet. Concurrently, given the instruction and the scene
+          image, the grasping part is identified by a <span style="color: limegreen;">grounding module</span>. Ultimately, the final grasp pose is
+          selected by filtering candidates based on the grasping part mask and GraspNet scores.
+        </p>
+
+        <div class="container has-text-centered">
+          <h3 class="title is-4" style="margin-bottom: 1em;"><span class="dperact" style="letter-spacing: 0.1em; color: deepskyblue;">Task-Aware Motion Planning Module</span></h2>
+        </div>
+        <img src="media/figure/behavior.png" class="interpolation-image" />
+        <p class="content has-text-justified">
+          This module is used to obtain a series of post-grasp poses. Given the instruction
+          and the current observation, we first employ a <span style="color: limegreen;">grounding module</span> to identify task-relevant parts within the
+          scene. Subsequently, these parts are modeled in 3D, and are then projected and annotated onto the scene image. Following
+          this, VLMs are utilized to generate spatial constraints for these parts. Finally, a solver is applied to calculate the post-grasp
+          poses based on these constraints.
+        </p>
+
+        </br>
+        </br>
+
+        <!--/ Re-rendering. -->
+        <!-- Interactive Visualiation -->
+        <div class="container has-text-centered">
+          <h2 class="title is-3" style="margin-bottom: 1em;">Visualization of Spatial Constraints</h2>
+        </div>
+        <div class="columns is-vcentered">
+          <div class="column has-text-centered">
+
+            Visualization for   
+            <div class="select is-small is-rounded">     
+              <select id="interative-menu" onchange="updateInteractive()">
+              <option value="flowers" selected="selected">"Put flowers into vase"</option>
+              <option value="hammer" selected="selected">"Hammer the nail"</option>
+              <option value="drawer">"Open the drawer"</option>
+              </select>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="columns is-vcentered">
+          <div class="column is-two-fifths">
+            <video id="interactive-video" width="100%" height="100%" controls autoplay loop muted>
+              <source src="media/short-videos/flowers.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="column has-text-centered">
+            <iframe id="interactive-html-1" src="media/interactive/flowers.html" width="100%" height="600" frameborder="0"></iframe>
+            <p style="text-align:center;">
+              Visualization of spatial constraints & post-grasp end-effector trajectory
+            </p>
+          </div>
+        </div>
+
+        </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="section">
+  <div class="container is-max-widescreen">
+    <div class="rows">
+      <div class="container has-text-centered">
+        <h2 class="title is-3" style="margin-bottom: 1em;">Intergration with High-Level Planning</h2>
+      </div>
+      <p class="content has-text-justified">
+        We demonstrate the seamless integration with <a href="https://anonymous-vila.github.io/">ViLa</a> to accomplish long-horizon tasks. The high-level planner generates a sequence of sub-goals, which are then executed by CoPa. 
+        The results show that CoPa can be easily integrated with existing high-level planning algorithms to accomplish complex, long-horizon tasks.
+      </p>
+      <div class="columns is-centered is-vcentered">
+        <div class="column is-one-third">
+          <div class="card">
+            <div class="card-content">
+              <b>User</b>: "Make pour-over coffee." <br><br>
+              <b>ViLa</b>: <ol>
+                <li>“Scoop beans into container”</li>
+                <li>“Put funnel onto carafe” </li>
+                <li>“Pour powder into funnel” </li>
+                <li>“Pour water to funnel”</li>
+              </ol>
+            </div>
+          </div>
+        </div>
+        <div class="column">
+          <video width="100%" height="100%" controls muted controlsList="nodownload">
+            <source src="media/long-horizon/coffee_x264.mp4" type="video/mp4">
+          </video>
+        </div>
+      </div>
+
+      <div class="columns is-centered is-vcentered">
+        <div class="column is-one-third">
+          <div class="card">
+            <div class="card-content">
+              <b>User</b>: "Set up table for a romantic dinner." <br><br>
+              <b>ViLa</b>: <ol>
+                <li>“Put flowers into vase”</li>
+                <li>“Right fallen bottle”</li>
+                <li>“Place fork and knife” </li>
+                <li>“Pour red wine”</li>
+              </ol>
+            </div>
+          </div>
+        </div>
+        <div class="column">
+          <video width="100%" height="100%" controls muted controlsList="nodownload">
+            <source src="media/long-horizon/setup-table_x264.mp4" type="video/mp4">
+          </video>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+</body>
+</html>
