@@ -3,23 +3,24 @@
 <head>
   <meta charset="utf-8">
   <meta name="description"
-        content="CoPa: General Robotic Manipulation through Spatial Constraints of Parts with Fundational Models">
+        content="CoPa: General Robotic Manipulation through Spatial Constraints of Parts with Foundational Models">
   <meta name="keywords" content="Robotic Manipulation, GPT-4V(ision)">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title style="letter-spacing: 0.1em; font-variant: small-caps;">CoPa</title>
 
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-FV4ZJ9PVSV"></script>  
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-R2ZLMKHR2E"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
 
-    gtag('config', 'G-FV4ZJ9PVSV');
-  </script>
+  gtag('config', 'G-R2ZLMKHR2E');
+</script>
 
   <script>
     function updateInteractive() {
-      var task = document.getElementById("interative-menu").value;
+      var task = document.getElementById("interactive-menu").value;
 
       console.log("interactive", task)
 
@@ -66,10 +67,32 @@
     <div class="container is-fullhd">
       <div class="columns is-centered">
         <div class="column has-text-centered">
-          <h1 class="title is-1 publication-title">CoPa: General Robotic Manipulation through <br> Spatial Constraints of Parts with Fundational Model</h1>
+          <h1 class="title is-1 publication-title">CoPa: General Robotic Manipulation through <br> Spatial Constraints of Parts with Foundational Model</h1>
 
           <div class="is-size-5 publication-authors">
-            Anonymous Authors
+            <span class="author-block">
+              Haoxu Huang<sup>2,3,4*</sup>,
+            </span>
+            <span class="author-block">
+              Fanqi Lin<sup>1,2,4*</sup>,
+            </span>
+            <span class="author-block">
+              Yingdong Hu<sup>1,2,4</sup>,
+            </span>
+            <span class="author-block">
+              Shengjie Wang<sup>1,2,4</sup>,
+            </span>
+            <span class="author-block">
+              Yang Gao<sup>1,2,4</sup>
+            </span>
+          </div>
+
+          <div class="is-size-6 publication-authors">
+            <span class="author-block"><sup>*</sup>The first two authors contributed equally. </span>
+            <span class="author-block"><sup>1</sup>Institute of Interdisciplinary Information Sciences, Tsinghua University. </span>
+            <span class="author-block"><sup>2</sup>Shanghai Qi Zhi Institute. </span>
+            <span class="author-block"><sup>3</sup>Shanghai Jiao Tong University. </span>
+            <span class="author-block"><sup>4</sup>Shanghai Artificial Intelligence Laboratory. </span>
           </div>
 
           <div class="column has-text-centered">
@@ -97,7 +120,7 @@
             </span>
 
             <!-- Video Link. -->
-            <span class="link-block">
+            <!-- <span class="link-block">
               <a target="_blank" href="https://example.com"
                  class="external-link button is-normal is-rounded is-dark">
                 <span class="icon">
@@ -105,7 +128,7 @@
                 </span>
                 <span>Video</span>
               </a>
-            </span>
+            </span> -->
 
             <!-- Code Link. -->
             <span class="link-block">
@@ -139,7 +162,7 @@
         <br>
         <h2 class="subtitle has-text-centered">
         We propose Robotic Manipulation through Spatial
-        Constraints of Parts <b>(COPA)</b>, a novel framework that incorporates common sense knowledge embedded within 
+        Constraints of Parts <b>(CoPa)</b>, a novel framework that incorporates common sense knowledge embedded within 
         foundation vision-language models (VLMs), such as GPT-4V, into the low-level robotic manipulation tasks.
         </h2>
       </div>
@@ -214,7 +237,7 @@
 </section>
 <h2 class="subtitle has-text-centered">
 </br>
-  Copa is capable of handling diverse <b>open-set instructions and objects</b> in a <b>zero-training</b> manner.
+  CoPa is capable of handling diverse <b>open-set instructions and objects</b> in a <b>zero-training</b> manner.
 </h2>
 
 <!-- Abstract -->
@@ -268,10 +291,10 @@
         <img src="media/figure/teaser.png" class="interpolation-image" />
         <!-- <video src="media/videos/method.mp4" class="interpolation-image" loop autoplay muted controlsList="nodownload"></video> -->
         <p class="content has-text-justified">
-          <b>Left</b> Our pipeline. Given an instruction and scene observation, COPA first generates a grasp
+          <b>Left</b> Our pipeline. Given an instruction and scene observation, CoPa first generates a grasp
           pose through <span style="color: orange;">Task-Oriented Grasping Module</span> . Subsequently, a <span style="color: deepskyblue;">Task-Aware Motion Planning Module</span> 
             is utilized to obtain post-grasp poses. <b>Right</b>. Examples of real-world experiments. Boasting a fine-grained
-          physical understanding of scenes, COPA can generalize to open-world scenarios, handling open-set instructions and objects
+          physical understanding of scenes, CoPa can generalize to open-world scenarios, handling open-set instructions and objects
           with minimal prompt engineering and without the need for additional training.
         </p>
         
@@ -280,7 +303,7 @@
         </div>
         <img src="media/figure/grounding.png" class="interpolation-image" />
         <p class="content has-text-justified">
-          his module is utilized to identify the <span style="color: orange;">grasping part for task-oriented grasping</span> or <span style="color: deepskyblue;"> task-relevant
+          This module is utilized to identify the <span style="color: orange;">grasping part for task-oriented grasping</span> or <span style="color: deepskyblue;"> task-relevant
           parts for task-aware motion planning</span>. The grounding process is divided into two stages: coarse-grained object grounding
           and fine-grained part grounding. Specifically, we first segment and label objects within the scene using SoM. Then, in
           conjunction with the instruction, we employ GPT-4V to select the <span style="color: orange;">grasping</span>/<span style="color: deepskyblue;">task-relevant</span> objects. Finally, similar fine-grained
@@ -322,7 +345,7 @@
         </br>
 
         <!--/ Re-rendering. -->
-        <!-- Interactive Visualiation -->
+        <!-- Interactive Visualization -->
         <div class="container has-text-centered">
           <h2 class="title is-3" style="margin-bottom: 1em;">Visualization of Spatial Constraints</h2>
         </div>
@@ -331,9 +354,9 @@
 
             Visualization for   
             <div class="select is-small is-rounded">     
-              <select id="interative-menu" onchange="updateInteractive()">
+              <select id="interactive-menu" onchange="updateInteractive()">
               <option value="flowers" selected="selected">"Put flowers into vase"</option>
-              <option value="hammer" selected="selected">"Hammer the nail"</option>
+              <option value="hammer">"Hammer the nail"</option>
               <option value="drawer">"Open the drawer"</option>
               </select>
             </div>
@@ -365,7 +388,7 @@
   <div class="container is-max-widescreen">
     <div class="rows">
       <div class="container has-text-centered">
-        <h2 class="title is-3" style="margin-bottom: 1em;">Intergration with High-Level Planning</h2>
+        <h2 class="title is-3" style="margin-bottom: 1em;">Integration with High-Level Planning</h2>
       </div>
       <p class="content has-text-justified">
         We demonstrate the seamless integration with <a href="https://anonymous-vila.github.io/">ViLa</a> to accomplish long-horizon tasks. The high-level planner generates a sequence of sub-goals, which are then executed by CoPa. 
@@ -386,7 +409,7 @@
           </div>
         </div>
         <div class="column">
-          <video width="100%" height="100%" controls muted controlsList="nodownload">
+          <video width="100%" height="100%" controls controlsList="nodownload">
             <source src="media/long-horizon/coffee_x264.mp4" type="video/mp4">
           </video>
         </div>
@@ -407,7 +430,7 @@
           </div>
         </div>
         <div class="column">
-          <video width="100%" height="100%" controls muted controlsList="nodownload">
+          <video width="100%" height="100%" controls controlsList="nodownload">
             <source src="media/long-horizon/setup-table_x264.mp4" type="video/mp4">
           </video>
         </div>
