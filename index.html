@@ -88,11 +88,11 @@
           </div>
 
           <div class="is-size-6 publication-authors">
-            <span class="author-block"><sup>*</sup>The first two authors contributed equally. </span>
             <span class="author-block"><sup>1</sup>Institute of Interdisciplinary Information Sciences, Tsinghua University. </span>
             <span class="author-block"><sup>2</sup>Shanghai Qi Zhi Institute. </span>
             <span class="author-block"><sup>3</sup>Shanghai Jiao Tong University. </span>
-            <span class="author-block"><sup>4</sup>Shanghai Artificial Intelligence Laboratory. </span>
+            <span class="author-block"><sup>4</sup>Shanghai Artificial Intelligence Laboratory. </span><br>
+            <span class="author-block"><sup>*</sup>The first two authors contributed equally. </span>
           </div>
 
           <div class="column has-text-centered">
@@ -391,16 +391,18 @@
         <h2 class="title is-3" style="margin-bottom: 1em;">Integration with High-Level Planning</h2>
       </div>
       <p class="content has-text-justified">
-        We demonstrate the seamless integration with <a href="https://anonymous-vila.github.io/">ViLa</a> to accomplish long-horizon tasks. The high-level planner generates a sequence of sub-goals, which are then executed by CoPa. 
+        We demonstrate the seamless integration with <a href="https://robot-vila.github.io/">ViLa</a> to accomplish long-horizon tasks. The high-level planner generates a sequence of sub-goals, which are then executed by CoPa. 
         The results show that CoPa can be easily integrated with existing high-level planning algorithms to accomplish complex, long-horizon tasks.
       </p>
       <div class="columns is-centered is-vcentered">
         <div class="column is-one-third">
           <div class="card">
             <div class="card-content">
-              <b>User</b>: "Make pour-over coffee." <br><br>
+              <b>User</b>: "Make me a cup of pour-over coffee." <br><br>
               <b>ViLa</b>: <ol>
-                <li>“Scoop beans into container”</li>
+                <li>“Scoop coffee beans”</li>
+                <li>“Pour beans into coffee machine”</li>
+                <li>“Turn on coffee machine”</li>
                 <li>“Put funnel onto carafe” </li>
                 <li>“Pour powder into funnel” </li>
                 <li>“Pour water to funnel”</li>
@@ -424,7 +426,7 @@
                 <li>“Put flowers into vase”</li>
                 <li>“Right fallen bottle”</li>
                 <li>“Place fork and knife” </li>
-                <li>“Pour red wine”</li>
+                <li>“Pour wine”</li>
               </ol>
             </div>
           </div>
